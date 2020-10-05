@@ -1,0 +1,13 @@
+steps:
+  - id: "go version"
+    name: 'gcr.io/cloud-builders/go'
+    args: ['go', 'version']
+    env: ["GOPATH=."]
+
+  - id: "go test"
+    name: 'gcr.io/cloud-builders/go'
+    args: ['go', 'test']
+    env: ["GOPATH=."]
+
+images:
+  - 'gcr.io/$PROJECT_ID/cm-sum'
