@@ -1,7 +1,7 @@
 steps:
   - id: "go version"
     name: golang
-    args: ['go', 'version']
+    args: ['ls', '&&', 'go', 'version']
     env: ["GOPATH=./"]
 
   - id: "go test"
