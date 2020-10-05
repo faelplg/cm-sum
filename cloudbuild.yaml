@@ -9,5 +9,18 @@ steps:
     args: [ 'go', 'test' ]
     env: [ 'PROJECT_ROOT=github.com/faelplg/cm-sum' ]
 
+  - id: "go install"
+    name: golang
+    args: [ 'install', '-a', '-ldflags', "'-s'", '-installsuffix', 'cgo', 'github.com/faelplg/cm-sum' ]
+    env: [
+        'PROJECT_ROOT=github.com/faelplg/cm-sum',
+        'CGO_ENABLED=0',
+        'GOOS=linux'
+    ]
+
+  - id: "docker build"
+    name: docker
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/cm-sum:latest', '.']
+
 images:
   - 'gcr.io/$PROJECT_ID/cm-sum:latest'
