@@ -2,12 +2,12 @@ steps:
   - id: "go version"
     name: golang
     args: [ 'go', 'version' ]
-    env: [ "GOPATH=." ]
+    env: [ 'PROJECT_ROOT=github.com/faelplg/cm-sum' ]
 
   - id: "go test"
     name: golang
     args: [ 'go', 'test' ]
-    env: [ "GOPATH=." ]
+    env: [ 'PROJECT_ROOT=github.com/faelplg/cm-sum' ]
 
 images:
   - 'gcr.io/$PROJECT_ID/cm-sum:latest'
