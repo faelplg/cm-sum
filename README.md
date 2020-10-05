@@ -15,10 +15,10 @@ Curso de Microsserviços:
  dois argumentos e essa função retorna a soma de ambos;
 * A função já envia como padrão os argumentos 5 e 5 conforme enunciado;
 
-### Tarefa 2
+#### Tarefa 2
 * Foi criado um teste unitário que testa se o resultado da soma é 10;
 
-### Tarefa 3
+#### Tarefa 3
 * O processo de CI foi criado utilizando o Google Cloud Build, cujo gatilho é
 acionado quando um pull request é feito a este repositório por alguém com permissão;
 * Os passos do CI envolvem:
