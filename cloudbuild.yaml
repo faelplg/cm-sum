@@ -1,13 +1,26 @@
 steps:
   - id: "go version"
-    name: 'gcr.io/cloud-builders/go'
-    args: ['go', 'version']
-    env: ["GOPATH=."]
+    name: golang
+    args: [ 'go', 'version' ]
+    env: [ 'PROJECT_ROOT=github.com/faelplg/cm-sum' ]
 
   - id: "go test"
-    name: 'gcr.io/cloud-builders/go'
-    args: ['go', 'test']
-    env: ["GOPATH=."]
+    name: golang
+    args: [ 'go', 'test' ]
+    env: [ 'PROJECT_ROOT=github.com/faelplg/cm-sum' ]
+
+  - id: "go build"
+    name: golang
+    args: [ 'go', 'build', '-o', 'cm-sum', '.' ]
+    env: [
+        'PROJECT_ROOT=github.com/faelplg/cm-sum',
+        'CGO_ENABLED=0',
+        'GOOS=linux'
+    ]
+
+  - id: "docker build"
+    name: docker
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/cm-sum:latest', '.']
 
 images:
-  - 'gcr.io/$PROJECT_ID/cm-sum'
+  - 'gcr.io/$PROJECT_ID/cm-sum:latest'
