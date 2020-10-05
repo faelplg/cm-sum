@@ -9,9 +9,9 @@ steps:
     args: [ 'go', 'test' ]
     env: [ 'PROJECT_ROOT=github.com/faelplg/cm-sum' ]
 
-  - id: "go install"
+  - id: "go build"
     name: golang
-    args: [ 'go', 'install', 'github.com/faelplg/cm-sum' ]
+    args: [ 'go', 'build', '-o', 'cm-sum', '.' ]
     env: [
         'PROJECT_ROOT=github.com/faelplg/cm-sum',
         'CGO_ENABLED=0',

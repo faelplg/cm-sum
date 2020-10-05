@@ -24,4 +24,6 @@ acionado quando um pull request é feito a este repositório por alguém com per
 * Os passos do CI envolvem:
     1. Verificar a versão do GO;
     2. Executar o arquivo de testes;
-    3. Enviar a imagem para o Container Registry;
+    3. Fazer o build do programa em Go;
+    4. Fazer o build da imagem em Docker;
+    5. Enviar imagem para o Container Registry;
