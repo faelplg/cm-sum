@@ -11,7 +11,7 @@ steps:
 
   - id: "go install"
     name: golang
-    args: [ 'install', 'github.com/faelplg/cm-sum' ]
+    args: [ 'go', 'install', 'github.com/faelplg/cm-sum' ]
     env: [
         'PROJECT_ROOT=github.com/faelplg/cm-sum',
         'CGO_ENABLED=0',
